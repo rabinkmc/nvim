@@ -49,4 +49,6 @@ return require('packer').startup(function(use)
 
   -- You can alias plugin names
   use {'dracula/vim', as = 'dracula'}
+  use {'vimwiki/vimwiki'}
+
 end)

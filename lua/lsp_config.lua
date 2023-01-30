@@ -36,7 +36,8 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-local servers = { 'pyright', 'tsserver'}
+-- local servers = { 'pyright', 'tsserver'}
+local servers = {'pyright', 'tsserver'}
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -45,6 +46,16 @@ for _, lsp in pairs(servers) do
         }
     }
 end
+-- require'lspconfig'.volar.setup{
+--   init_options = {
+--     typescript = {
+--       tsdk = "/home/rabin/.nvm/versions/node/v16.16.0/lib/node_modules/typescript/lib"
+--       -- Alternative location if installed as root:
+--       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+--     }
+--   }
+-- }
+
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " } 
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type

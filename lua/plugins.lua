@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use "nvim-lua/plenary.nvim"
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'mattn/emmet-vim'
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
@@ -33,10 +35,10 @@ return require('packer').startup(function(use)
     config = 'vim.cmd[[ALEEnable]]'
   }
 
-  use {
-    'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
+  -- use {
+  --   'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
+  --   requires = {'kyazdani42/nvim-web-devicons'}
+  -- }
 
   -- Use dependency and run lua function after load
   use {
@@ -50,5 +52,6 @@ return require('packer').startup(function(use)
   -- You can alias plugin names
   use {'dracula/vim', as = 'dracula'}
   use {'vimwiki/vimwiki'}
+  use 'preservim/nerdtree'
 
 end)

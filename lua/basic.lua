@@ -8,7 +8,7 @@ vim.opt.expandtab = true
 vim.opt.mouse = "a"
 vim.keymap.set('n', '<Leader>vr', ':Telescope find_files cwd=~/.config/nvim/<cr>')
 vim.cmd [[
-  colorscheme tokyonight-night
+  colorscheme tokyonight
 ]]
 
 local builtin = require('telescope.builtin')

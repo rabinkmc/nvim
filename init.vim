@@ -5,6 +5,7 @@ lua require('nvim_cmp')
 lua require('null_ls')
 
 set completeopt=menu,menuone,noselect
+set noswapfile
 set number
 set relativenumber
 set clipboard=unnamedplus

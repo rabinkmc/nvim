@@ -55,5 +55,16 @@ return require('packer').startup(function(use)
   use 'preservim/nerdtree'
   use 'nvim-tree/nvim-web-devicons'
   use 'ryanoasis/vim-devicons'
+  use 'folke/tokyonight.nvim'
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+    }  
+  end
+}
 
 end)

@@ -46,7 +46,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 -- local servers = { 'pyright', 'tsserver'}
-local servers = {'pyright', 'tsserver'}
+local servers = {'pyright', 'tsserver', 'volar'}
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,

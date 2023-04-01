@@ -17,5 +17,8 @@ nnoremap gdl :diffget //2<CR>
 nnoremap gdr :diffget //3<CR>
 nnoremap gdd :Gvdiffsplit!<CR>
 nnoremap gds :Gvdiffsplit! develop<CR>
+nnoremap <leader> :Gvdiffsplit! develop<CR>
 set undodir=~/.undodir
 set undofile
+set wildignore=*/node_modules/*
+command Fpath :!echo % | xclip -sel clip

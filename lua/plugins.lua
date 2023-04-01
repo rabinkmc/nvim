@@ -53,5 +53,7 @@ return require('packer').startup(function(use)
   use {'dracula/vim', as = 'dracula'}
   use {'vimwiki/vimwiki'}
   use 'preservim/nerdtree'
+  use 'nvim-tree/nvim-web-devicons'
+  use 'ryanoasis/vim-devicons'
 
 end)

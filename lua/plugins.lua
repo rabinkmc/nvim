@@ -65,6 +65,14 @@ return require('packer').startup(function(use)
         -- refer to the configuration section below
     }  
   end
-}
+ }
+ use 'mfussenegger/nvim-dap'
+ use 'williamboman/mason.nvim'
+ use 'watzon/vim-edge-template'
+ use 'jiangmiao/auto-pairs'
+ use 'francoiscabrol/ranger.vim'
+ use 'rbgrouleff/bclose.vim'
+ use 'prettier/vim-prettier'
+ use 'joshdick/onedark.vim'
 
 end)

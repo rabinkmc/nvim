@@ -10,10 +10,10 @@ vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', 'qp', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', 'qn', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>qp', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', '<leader>qn', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>qs', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -38,15 +38,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', 'lf', vim.lsp.buf.format, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
 -- local servers = { 'pyright', 'tsserver'}
-local servers = {'pyright', 'tsserver', 'volar'}
+local servers = {'pyright', 'tsserver', 'gopls'}
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
@@ -55,15 +51,6 @@ for _, lsp in pairs(servers) do
         }
     }
 end
--- require'lspconfig'.volar.setup{
---   init_options = {
---     typescript = {
---       tsdk = "/home/rabin/.nvm/versions/node/v16.16.0/lib/node_modules/typescript/lib"
---       -- Alternative location if installed as root:
---       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
---     }
---   }
--- }
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " } 
 for type, icon in pairs(signs) do

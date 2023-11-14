@@ -41,14 +41,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'lf', vim.lsp.buf.format, bufopts)
 end
 
--- local servers = { 'pyright', 'tsserver'}
-local servers = {'pyright', 'tsserver', 'gopls'}
+local servers = {'pyright', 'tsserver', 'gopls', 'volar', 'tailwindcss'}
+-- local servers = {'pyright', 'tsserver', 'gopls'}
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
         on_attach = on_attach,
-        flags = {
-          debounce_text_changes = 150,
-        }
     }
 end
 

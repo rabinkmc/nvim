@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
   use {'tpope/vim-commentary'}
   use {'tpope/vim-surround'}
   use {'tpope/vim-fugitive'}
-
+  use 'tpope/vim-dadbod'
   use 'neovim/nvim-lspconfig'
   use "williamboman/nvim-lsp-installer"
   use 'hrsh7th/cmp-nvim-lsp'
@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  -- use 'SirVer/ultisnips'
+  -- use 'honza/vim-snippets'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'mattn/emmet-vim'
   use {
@@ -26,16 +28,14 @@ return require('packer').startup(function(use)
   }
 
   use 'nvim-treesitter/nvim-treesitter'
-  use {'vimwiki/vimwiki'}
   use 'nvim-tree/nvim-web-devicons'
   use 'folke/tokyonight.nvim'
- use 'watzon/vim-edge-template'
- use 'jiangmiao/auto-pairs'
- use 'prettier/vim-prettier'
- use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
- }
- use 'nvim-telescope/telescope-file-browser.nvim'
- use { "catppuccin/nvim", as = "catppuccin" }
+  use 'watzon/vim-edge-template'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'windwp/nvim-autopairs'
+  use 'nvim-telescope/telescope-live-grep-args.nvim'
+  use 'vimwiki/vimwiki'
+  use 'rest-nvim/rest.nvim'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 end)

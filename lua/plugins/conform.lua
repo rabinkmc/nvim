@@ -31,6 +31,7 @@ return {
       lua = { 'stylua' },
       javascript = { 'prettier', stop_after_first = true },
       vue = { 'prettier', stop_after_first = true },
+      python = { 'black', stop_after_first = true },
     },
   },
 }

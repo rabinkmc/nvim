@@ -1,5 +1,4 @@
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = false
 
@@ -9,7 +8,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 
-vim.opt.laststatus = 0
+vim.opt.laststatus = 1
 vim.opt.swapfile = false
 vim.opt.breakindent = true
 vim.opt.undofile = true

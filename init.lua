@@ -1,5 +1,6 @@
 require 'options'
 require 'keymaps'
+require 'utils'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -11,4 +12,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+vim.o.exrc = true -- enable reading local rc files like .nvim.lua or .nvimrc
+vim.o.secure = true
 require('lazy').setup 'plugins'

@@ -15,3 +15,9 @@ vim.keymap.set('n', '<leader>vr', function()
     cwd = '~/.config/nvim/',
   }
 end)
+
+vim.keymap.set('n', '<leader>cc', ':r ~/Templates/dsa.cpp<cr>')
+-- vim.keymap.set('n', '<leader>cf', ':!clang-format -i %<cr><cr>')
+vim.keymap.set('n', '<leader>cm', ':r ~/Templates/main.cpp<cr>')
+vim.keymap.set('n', '<leader>zz', ':ZenMode<cr>')
+vim.keymap.set('n', '<leader>nn', ':30 Vex<cr>')
